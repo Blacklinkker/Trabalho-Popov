@@ -16,7 +16,7 @@ public class Trab2 {
         //insere os clientes na fila utilizando o metodo cliente.inserir() definido em Fila.java
         //e um laço de repetição com o numero de clientes presentes na fila
         for(int i=0;i<clientesFila;i++){
-            clientes.inserir(JOptionPane.showInputDialog("Insira o nome do"+ (i+1)+"º cliente a chegar: "));
+            clientes.inserir(JOptionPane.showInputDialog("Insira o nome do "+ (i+1)+"º cliente a chegar: "));
         }
         //coloca os clientes em ordem em uma String para facilitar noção da fila
         String ordenados=clientes.filaEmOrdem(clientesFila);
@@ -24,8 +24,10 @@ public class Trab2 {
 
         //remove os clientes em ordem de chegada até não restar nenhum 
         while(clientes.vazia()==false){
+            int c=1;
             //anuncia que os clientes foram atendidos e solicita o proximo
-            JOptionPane.showMessageDialog(null, "O cliente "+clientes.retirar()+" acaba de ser atendido,que venha o proximo!");
+            JOptionPane.showMessageDialog(null, "O cliente "+c+"º, "+clientes.retirar()+" acaba de ser atendido,que venha o proximo!");
+            c++;
         }
         JOptionPane.showMessageDialog(null, "Todos os clientes foram atendidos com sucesso!");
     }
